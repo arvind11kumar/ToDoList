@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>todo list</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .onediv{
+            display: flex;
+            justify-content: center;
+        }
+        .todoone{
+            height: 40px;
+            width: 200px;
+            border-color: aqua;
+            font-size: 22px;
+            
+        }
+        .btn{
+            height: 45px;
+            width: 50px;
+            text-align: center;
+            font-size: 25px;
+
+        }
+        .btn:hover{
+            background-color: red;
+
+
+        }
+        html,body{
+            width: 50%;
+            margin: 0 auto;
+        }
+
+.changefont{
+    font-size: 25px;
+    font-weight: bolder;
+}
+    </style>
+    
+</head>
+<body>
+    <h1>To Do List</h1>
+    <div class="onediv">
+        <input class="todoone" type="text"><button class="btn">+</button> <br>
+        
+    </div>
+    <div class="list_does"></div>
+</body>
+<script>
+    let todoone=document.querySelector(".todoone");
+    let list_does=document.querySelector(".list_does");
+    let btnclick=document.querySelector(".btn");
+    
+    btnclick.addEventListener('click',()=>{
+        let creelm=document.createElement("P");
+           creelm.innerText=todoone.value;
+           creelm.classList.add("changefont");  
+        list_does.appendChild(creelm);
+
+         creelm.addEventListener('click',function(){
+             creelm.remove();
+         })
+       
+    })
+</script>
+</html>
